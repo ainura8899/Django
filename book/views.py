@@ -15,7 +15,7 @@ def book_detail_view(request, id):
                 'book_id': book_id
             }
         )
-# вывод не полной информации
+# вывод неполной информации
 def book_list_view(request):
     if request.method == "GET":
         # query запрос

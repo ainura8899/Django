@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
+{% load static %}
+{% include 'header.html' %}
+<link href="{% static 'css/book_detail.css' %}" rel="stylesheet" type="text/css">
 <img src="{{book_id.image.url}}" alt="">
 <h1>{{ book_id.title }}</h1>
 <p>{{ book_id.author }}</p>
@@ -17,5 +12,13 @@
 <a href="{{book_id.url_book}}" >Перейти на сайт</a>
 
 
-</body>
-</html>
+<div class="center">
+    {% for j in book_id.review_book.all %}
+    <p>
+        <h3>{{ j.text_book }}</h3>
+    </p>
+    <p>{{ j.created_at }}</p>
+    {% endfor %}
+</div>
+
+{% include 'footer.html' %}

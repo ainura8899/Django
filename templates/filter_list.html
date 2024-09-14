@@ -1,0 +1,29 @@
+{% include 'header.html' %}
+
+<br><br><br>
+Фильтрация по детской одежде
+{% for i in cloth_children %}
+<h1>
+    {{  i.name }}
+</h1>
+{% endfor%}
+<hr>
+
+
+Фильтрация по одежде для взрослых
+{% for i in cloth_adults %}
+<h1>
+    {{  i.name }}
+</h1>
+{% endfor%}
+<hr>
+
+Фильтрация по одежде для пенсионеров
+{% for i in cloth_pensioners %}
+<h1>
+    {{  i.name }}
+</h1>
+{% endfor%}
+
+
+{% include 'footer.html' %}
