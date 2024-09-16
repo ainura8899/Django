@@ -8,7 +8,7 @@ class Book(models.Model):
     image = models.ImageField(upload_to='book/',
                               verbose_name='download picture')
     description = models.TextField(verbose_name='write description')
-    genre = models.IntegerField(max_length=100, verbose_name='Genre', choices=((1, "Детектив"), (2, "Фантастика"),
+    genre = models.IntegerField(verbose_name='Genre', choices=((1, "Детектив"), (2, "Фантастика"),
                         (3, "Детская литература"), (4, "Психология"), (5, "Кулинария")), null=True)
     url_book = models.URLField(verbose_name='write book url', null=True)
     author = models.TextField(verbose_name='write author name')

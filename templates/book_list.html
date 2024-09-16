@@ -1,7 +1,8 @@
 {% load static %}
 {% include 'header.html' %}
-<link href="{% static 'css/book_detail.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'css/book_detail.css' %}">
 <h1 class="text_color">Все книги</h1>
+
 <div class="square_mom">
 {% for i in book_object %}
 <div class="card mb-3" style="max-width: 540px; justify-content: center">

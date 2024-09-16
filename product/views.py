@@ -2,6 +2,7 @@ from django.shortcuts import render
 from . import models
 
 
+
 def cloth_filter_view(request):
     if request.method == 'GET':
         cloth_children = models.Cloth.objects.filter(tags__name='для детей').order_by('-id')
