@@ -5,7 +5,7 @@
 
 
 <center>
-<form action ="/create_book/" method = "POST" enctype="multipart/from-data" class="decor">
+<form action ="/create_book/" method = "POST" enctype="multipart/form-data" class="decor">
 <div class="form-left-decoration"></div>
 <div class="form-right-decoration"></div>
 <div class="circle"></div>
@@ -13,7 +13,7 @@
 <h3>Добавить книгу</h3>
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit" >="Добавить книгу"</button>
+    <button type="submit" >Добавить книгу</button>
 </div>
 </form>
 </center>

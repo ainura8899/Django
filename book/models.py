@@ -3,13 +3,17 @@ from django.db import models
 # Создание новой таблицы с названием Book
 class Book(models.Model):
 
+    GENRE_CHOICES = (
+        ('Детектив', 'Детектив'),
+        ('Психология', 'Психология'),
+        ('Детская литература', 'Детская литература')
+    )
+
     title = models.CharField(max_length=255,
                              verbose_name='enter title')
-    image = models.ImageField(upload_to='book/',
-                              verbose_name='download picture')
+    image = models.ImageField(upload_to='book/', null=True)
     description = models.TextField(verbose_name='write description')
-    genre = models.IntegerField(verbose_name='Genre', choices=((1, "Детектив"), (2, "Фантастика"),
-                        (3, "Детская литература"), (4, "Психология"), (5, "Кулинария")), null=True)
+    genre = models.CharField(max_length=100, choices=GENRE_CHOICES, null=True)
     url_book = models.URLField(verbose_name='write book url', null=True)
     author = models.TextField(verbose_name='write author name')
     pages = models.IntegerField(verbose_name='write number of pages', null=True)
