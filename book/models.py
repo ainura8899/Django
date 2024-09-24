@@ -10,7 +10,7 @@ class Book(models.Model):
     )
 
     title = models.CharField(max_length=255,
-                             verbose_name='enter title')
+                             verbose_name='enter title', db_index=True, null=True)
     image = models.ImageField(upload_to='book/', null=True)
     description = models.TextField(verbose_name='write description')
     genre = models.CharField(max_length=100, choices=GENRE_CHOICES, null=True)
@@ -20,7 +20,7 @@ class Book(models.Model):
     price = models.PositiveIntegerField(verbose_name='write price')
     # Если вы после миграций забыли указать какое-то поле, то так же создаете его,
     # но в атрибуте нового поля, указываете null=True и заново проводите миграции (PS: даже если вы изменили название поля)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True, null=True)
 
 
     def __str__(self):

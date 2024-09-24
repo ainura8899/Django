@@ -24,7 +24,7 @@ class BookListView(generic.ListView):
     model = models.Book
 
     def get_queryset(self): # создаем query запрос
-        return self.model.objects.all().order_by('-id')
+        return self.model.objects.all().prefetch_related('review_book').all().order_by('-id')
 
 
 # # def book_list_view(request):
