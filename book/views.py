@@ -17,6 +17,7 @@ class SearchView(generic.ListView):
         context['q'] = self.request.GET.get('q')
         return context
 
+@method_decorator(cache_page(60 * 15), name='dispatch')
 # вывод неполной информации
 class BookListView(generic.ListView):
     template_name = 'book_list.html'
@@ -38,7 +39,7 @@ class BookListView(generic.ListView):
 # #                 'book_object': book_object
 # #             }
 # #         )
-
+@method_decorator(cache_page(60 * 15), name='dispatch')
 # для полной информации
 class BookDetailView(generic.DetailView):
     template_name = 'book_detail.html'
@@ -60,9 +61,8 @@ class BookDetailView(generic.DetailView):
 #             }
 #         )
 
-
+@method_decorator(cache_page(60 * 15), name='dispatch')
 # CREATE BOOKS
-
 class BookCreateView(generic.CreateView):
     template_name = 'crud/create_book.html'
     form_class = forms.BookForm
@@ -89,7 +89,7 @@ class BookCreateView(generic.CreateView):
 #         }
 #     )
 
-
+@method_decorator(cache_page(60 * 15), name='dispatch')
 # DELETE NEWS
 class BookListDeleteView(generic.ListView):
     template_name = 'crud/book_list_delete.html'
@@ -99,6 +99,7 @@ class BookListDeleteView(generic.ListView):
     def get_queryset(self):
         return self.model.objects.all().order_by('-id')
 
+@method_decorator(cache_page(60 * 15), name='dispatch')
 class BookDropDeleteView(generic.DeleteView):
     template_name = 'crud/confirm_delete.html'
     success_url = '/book_list_delete/'

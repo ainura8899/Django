@@ -22,7 +22,7 @@ class CustomRegistrationForm(UserCreationForm):
     age = forms.IntegerField(required=True)
     gender = forms.ChoiceField(choices=GENDER, required=True)
     level = forms.ChoiceField(choices=LEVEL, required=True)
-    salary = forms.IntegerField(required=True)
+
 
     class Meta:
         model = models.CustomUser
@@ -37,7 +37,7 @@ class CustomRegistrationForm(UserCreationForm):
             'gender',
             'phone_number',
             'level',
-            'salary'
+
         )
 
     def save(self, commit=True):

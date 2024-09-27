@@ -27,7 +27,7 @@ class CustomUser(User):
     gender = models.CharField(max_length=10, choices=GENDER)
 
     level = models.CharField(max_length=10, choices=LEVEL, default='junior')
-    salary = models.PositiveIntegerField(max_length=4)
+    salary = models.PositiveIntegerField(max_length=4, default=0)
 
 
 @receiver(post_save, sender=CustomUser)
