@@ -25,7 +25,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin'
+    # 'jazzmin'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,8 +35,9 @@ INSTALLED_APPS = [
     'book',
     'product',
     'users',
+    'parser',
+    'tv_show',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
-
 ]
 
 

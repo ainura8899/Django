@@ -1,0 +1,22 @@
+{% load static %}
+{% include 'header.html' %}
+<link href="{% static 'css/movie_detail.css' %}" rel="stylesheet" type="text/css">
+<img src="{{movie_id.image.url}}" alt="" width="400">
+<h1>{{ movie_id.title }}</h1>
+<p>{{ movie_id.genre }}</p>
+<p>{{ movie_id.description }}</p>
+<p>{{ movie_id.price }}</p>
+<p>{{ movie_id.created_at }}</p>
+<a href="{{movie_id.url_movie}}" >Перейти на сайт</a>-->
+
+
+<div class="center">
+    {% for j in movie_id.review_movie.all %}
+    <p>
+        <h3>{{ j.text_movie }}</h3>
+    </p>
+    <p>{{ j.created_at }}</p>
+    {% endfor %}
+</div>
+
+{% include 'footer.html' %}

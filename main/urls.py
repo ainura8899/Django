@@ -8,6 +8,8 @@ urlpatterns = [
     path('', include('book.urls')),
     path('', include('product.urls')),
     path('', include('users.urls')),
+    path('', include('parser.urls')),
+    path('', include('tv_show.urls')),
 
 ]
 
